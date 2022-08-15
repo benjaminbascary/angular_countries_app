@@ -1,6 +1,9 @@
+// Core
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+// Routing
+import { AppRoutingModule } from './app-routing.module';
+// Developer's
 import { AppComponent } from './app.component';
 import { CountriesModule } from './countries/countries.module';
 import { SharedModule } from './shared/shared.module';
@@ -11,6 +14,7 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     SharedModule,
     CountriesModule
   ],
