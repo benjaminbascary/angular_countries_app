@@ -1,6 +1,4 @@
-export type SearchCountryInterface = Root2[]
-
-export interface Root2 {
+export interface Country {
   name: Name
   tld: string[]
   cca2: string

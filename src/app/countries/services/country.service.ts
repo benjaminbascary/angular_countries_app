@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 // Interfaces
 import { Error404Interface } from '../interfaces/Error404.interface';
-import { SearchCountryInterface } from '../interfaces/search-country.interface';
+import { Country } from '../interfaces/search-country.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +15,9 @@ export class CountryService {
   private BY_NAME: string = "name" 
 
   constructor(private http: HttpClient) { }
-
-  searchCountry( searchTerm: string): Observable<SearchCountryInterface | Error404Interface> {
+ 
+  searchCountry( searchTerm: string): Observable<Country[]> {
     const URL = `${this.BASE_URL}/${this.BY_NAME}/${searchTerm}`;
-    return this.http.get<SearchCountryInterface | Error404Interface>(URL);
+    return this.http.get<Country[]>(URL);
   }
 }
