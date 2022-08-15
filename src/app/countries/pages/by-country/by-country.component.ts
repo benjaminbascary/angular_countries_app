@@ -5,11 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './by-country.component.html',
   styleUrls: ['./by-country.component.css']
 })
-export class ByCountryComponent implements OnInit {
+export class ByCountryComponent {
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  searchTerm: string = '';
+  
+  handleSubmit() {
+    console.log(this.searchTerm)
   }
 
 }

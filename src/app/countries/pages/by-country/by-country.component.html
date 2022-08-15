@@ -1,1 +1,50 @@
-<p>by-country works!</p>
+<h2>By Country</h2>
+<hr>
+<div class="row">
+  <div class="col">
+    <form 
+      (ngSubmit)="handleSubmit()"
+      autocomplete="off">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter a country..." 
+        name="searchTerm"
+        [(ngModel)]="searchTerm"
+      >
+    </form>
+  </div>
+</div>
+<hr>
+
+<div class="alert alert-danger">
+  We couldn't found any results by that search term!
+</div>
+
+<div class="row">
+  <div class="col">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th> # </th>
+          <th> Flag </th>
+          <th> Name </th>
+          <th> Population </th>
+          <th> Info </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <!-- placeholder -->
+          <td>1</td>
+          <td>asdads</td>
+          <td>Barbados</td>
+          <td>15000</td>
+          <td>
+            <a href="/country/:id">Ver mas</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
