@@ -1,7 +1,12 @@
+// Core
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+// Developer's
 import { Country } from '../../interfaces/search-country.interface';
 import { CountryService } from '../../services/country.service';
+// rxjs
+import { switchMap } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-see-country',
@@ -20,17 +25,11 @@ export class SeeCountryComponent implements OnInit {
 
   ngOnInit(): void {
     this.ActivatedRoute.params
-      .subscribe(({id}) => {
-        this.error = false; 
-        this.SearchCountryService.searchCountryByCode(id)
-          .subscribe(response => {
-            console.log(response)
-            this.country = response;
-          }, (error) => {
-            this.error = true;
-            this.errorMessage = `Can't find any country matching ${id}`;
-            this.country = [];
-          })
+      .pipe(
+        switchMap(({id}) => this.SearchCountryService.searchCountryByCode(id))
+      )
+      .subscribe(response => {
+        this.country = response;
       })
   }
 
