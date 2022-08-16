@@ -14,6 +14,7 @@ export class CountryService {
   private BY_NAME: string = "name"; 
   private BY_CAPITAL: string = "capital";
   private BY_REGION: string = "region";
+  private BY_ALPHA: string = "alpha";
 
   constructor(private http: HttpClient) { }
  
@@ -31,4 +32,10 @@ export class CountryService {
     const URL = `${this.BASE_URL}/${this.BY_REGION}/${searchTerm}`
     return this.http.get<Country[]>(URL);
   }
+
+  searchCountryByCode(searchCode: string) {
+    const URL = `${this.BASE_URL}/${this.BY_ALPHA}/${searchCode}`;
+    return this.http.get<Country[]>(URL);
+  }
+
 }
