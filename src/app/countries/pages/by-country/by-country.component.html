@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col">
     <!-- components/search-input -->
-    <app-search-input (onEnter)="handleSubmit($event)"></app-search-input>
+    <app-search-input (onEnter)="handleSubmit($event)" (onDebounce)="suggestions()"></app-search-input>
   </div>
 </div>
 <hr>
