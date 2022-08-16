@@ -30,4 +30,10 @@ export class ByCountryComponent {
       })
   }
 
+  suggestions(searchTerm?: string) {
+    this.error = false
+    /** 
+      @TODO crear suggestions!
+    */
+  }
 }
