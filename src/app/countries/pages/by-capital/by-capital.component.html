@@ -1,1 +1,26 @@
-<p>by-capital works!</p>
+<h2>By Capital</h2>
+<hr>
+<div class="row">
+  <div class="col">
+    <!-- components/search-input -->
+    <app-search-input 
+      placeHolder="Search a capital..."
+      (onEnter)="handleSubmit($event)" 
+      (onDebounce)="suggestions()">
+    </app-search-input>
+  </div>
+</div>
+<hr>
+<div
+  *ngIf="error"
+  class="alert alert-danger" >
+  {{errorMessage}}
+</div>
+<div
+  *ngIf="countries.length > 0"
+  class="row">
+  <div class="col">
+    <!-- components/table -->
+    <app-countries-table [countries]="countries"></app-countries-table>
+  </div>
+</div>
