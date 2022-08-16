@@ -1,1 +1,25 @@
-<p>see-country works!</p>
+<div class="alert alert-info" *ngIf="!country">
+  "Loading..."
+</div>
+
+<div class="row" *ngIf="country">
+  <div class="col">
+    <h1>Country: <small>{{country.name.common}} {{country.flag}}</small></h1>
+  </div>
+  <div class="row container info-container">
+    <div class="col-4">
+      <h3>Flag:</h3>
+      <img src="{{country.flags.png}}" alt="{{country.name.common}}">
+      <div *ngIf="country.altSpellings[1]">
+        <strong>Full name:</strong>
+        <p>{{country.altSpellings[1]}}</p>
+      </div>
+      <strong>Population</strong>
+      <p>{{country.population | number}}</p>
+      <strong>Region</strong>
+      <p>{{country.region}}</p>
+      <strong>Where?</strong>
+      <a href="{{country.maps.googleMaps}}" target="_blank">GoogleMaps!</a>
+    </div>
+  </div>
+</div>
