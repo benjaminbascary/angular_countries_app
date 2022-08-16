@@ -16,7 +16,6 @@ export class ByCountryComponent {
   errorMessage: string = ''
   searchTerm: string = '';
   countries: Country[] = [];
- 
   // This term comes from /
   handleSubmit(term: string) {
     this.error = false; 
