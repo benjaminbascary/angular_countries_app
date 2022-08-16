@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 // Interfaces
-import { Error404Interface } from '../interfaces/Error404.interface';
 import { Country } from '../interfaces/search-country.interface';
 
 @Injectable({
