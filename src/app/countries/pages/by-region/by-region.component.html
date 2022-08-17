@@ -1,25 +1,29 @@
-<h3>Search by region: <small>{{ activeRegion | titlecase }}</small></h3>
-<h3></h3>
-<h5>Select a region:</h5>
-<div class="row">
-  <div class="col">
-    <button 
-      *ngFor="let region of regions"
-      (click)="activateRegion(region); handleClick()"
-      [class]="getCSSClass(region)"
-    >
-      {{region}}
-    </button>
+<div class="animate__animated animate__fadeIn">
+  <h3>Search by region: <small>{{ activeRegion | titlecase }}</small></h3>
+  <h3></h3>
+  <h5>Select a region:</h5>
+  <div class="row">
+    <div class="col">
+      <button 
+        *ngFor="let region of regions"
+        (click)="activateRegion(region); handleClick()"
+        [class]="getCSSClass(region)"
+      >
+        {{region}}
+      </button>
+    </div>
   </div>
-</div>
 <hr>
+</div>
 <div
+  class="animate__animated animate__fadeIn"
   *ngIf="error"
   class="alert alert-danger" >
   {{errorMessage}}
 </div>
 
 <div
+  class="animate__animated animate__fadeIn"
   *ngIf="countries.length > 0"
   class="row">
   <div class="col">

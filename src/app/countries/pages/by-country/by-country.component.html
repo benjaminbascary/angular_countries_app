@@ -1,18 +1,22 @@
-<h2>By Country</h2>
-<hr>
-<div class="row">
-  <div class="col">
-    <!-- components/search-input -->
-    <app-search-input
-      placeHolder="Search a country..."
-      (onEnter)="handleSubmit($event)"
-      (onDebounce)="suggestions()">
-    </app-search-input>
+
+<div class="animate__animated animate__fadeIn">
+  <h2>By Country</h2>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <!-- components/search-input -->
+      <app-search-input
+        placeHolder="Search a country..."
+        (onEnter)="handleSubmit($event)"
+        (onDebounce)="suggestions()">
+      </app-search-input>
+    </div>
   </div>
+  <hr>
 </div>
-<hr>
 
 <div
+  class="animate__animated animate__fadeIn"
   *ngIf="error"
   class="alert alert-danger" >
   {{errorMessage}}
