@@ -8,10 +8,27 @@
       <app-search-input
         placeHolder="Search a country..."
         (onEnter)="handleSubmit($event)"
-        (onDebounce)="suggestions()">
+        (onDebounce)="getSuggestions($event)">
       </app-search-input>
     </div>
   </div>
+
+  <ul class="list-group" *ngIf="showSuggestions">
+    <a
+      (click)="handleSuggestionSearch()" 
+      *ngIf="searchTerm" 
+      class="list-group-item list-group-item-action"
+      >
+      Search all countries with "{{ searchTerm | titlecase }}"
+    </a>
+    <li class="list-group-item list-group-item-action" *ngFor="let suggestion of suggestions">
+      <a
+        class="nav-link" 
+        [routerLink]="['/country', suggestion.cca2]">
+        {{suggestion.name.common}}
+      </a>
+    </li>
+  </ul>
   <hr>
 </div>
 
