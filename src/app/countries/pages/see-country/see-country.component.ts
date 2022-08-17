@@ -35,7 +35,6 @@ export class SeeCountryComponent implements OnInit {
   country!: Country;
   errorMessage: string = '';
   error: Boolean = false;
-  translations: any = [];
 
   ngOnInit(): void {
     this.ActivatedRoute.params
@@ -44,8 +43,7 @@ export class SeeCountryComponent implements OnInit {
         tap(console.log)
       )
       .subscribe(response => {
-        this.country = response[0];
-        this.translations = response[0].translations
+        this.country = response;
       })
   }
 
