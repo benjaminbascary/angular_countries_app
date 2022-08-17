@@ -1,8 +1,8 @@
-<div class="alert alert-info" *ngIf="!country">
+<div class="alert alert-info" *ngIf="!country" class="animate__animated animate__fadeIn">
   "Loading..."
 </div>
 
-<div class="row" *ngIf="country">
+<div class="row" *ngIf="country" class="animate__animated animate__fadeIn">
   <div class="col">
     <h1>Country: <small>{{country.name.common}} {{country.flag}}</small></h1>
   </div>
